@@ -24,7 +24,7 @@ Each skill is a three-level record:
 Because rules name *relations among functional parts* rather than absolute voxel coordinates, a `5×5` principle can guide a `10×10` search without any voxel upsampling — the LLM weights stay fixed; the explicit design memory is what evolves.
 
 <p align="center">
-  <img src="images/auto_robotist/autorobotist-pipeline.png" alt="Pipeline" width="900"/>
+  <img src="images/auto_robotist/autorobotist-pipeline.png" alt="Auto-Robotist overview: design evolution, skill evolution, and warm-start transfer" width="900"/>
 </p>
 
 ---
@@ -37,8 +37,10 @@ Across seven EvoGym tasks (Walker, BridgeWalker, Balancer, Carrier, Climber, Jum
 - **5×5 → 10×10 transfer.** Importing the learned library beats GA on **all seven** tasks. A skill-only variant (no source body shown) confirms gains come from *rules*, not visual imitation.
 
 <p align="center">
-  <img src="images/auto_robotist/exp_combined_5x5_10x101.png" alt="Fitness curves" width="900"/>
+  <img src="images/auto_robotist/exp_combined_5x5_10x10_smoothed.png" alt="Smoothed fitness curves across seven EvoGym tasks: 5×5 cold-start (top) and 10×10 transfer (bottom)" width="900"/>
 </p>
+
+The top row shows 5×5 cold-start search; the bottom row shows 10×10 transfer. Shaded regions indicate mean ± standard deviation for the corresponding Auto-Robotist curves.
 
 <p align="center">
   <img src="images/auto_robotist/auto-robotist-comparison.png" alt="Cross-method comparison" width="900"/>
